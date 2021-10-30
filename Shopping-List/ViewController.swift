@@ -120,11 +120,36 @@ class ViewController: UIViewController {
     }
     
     @IBAction func StepperNumItem_Pressed_5(_ sender: UIStepper) {
+        print("Sender val : ", Int(sender.value))
+        if ((NumOfItemLabel_5.text == "0") && (Int(sender.value) != 0) && (previousStepperValue_5 != 0) && (Int(sender.value) < previousStepperValue_5)){
+//            NumOfItemLabel_5.text = "0"
+            NumOfItemLabel_5.text = String(Int(sender.value) - previousStepperValue_5)
+            print("here 1")
+            return
+        }
+        if (Int(sender.value) == 0){
+//            NumOfItemLabel_5.text = "0"
+            previousStepperValue_5 = 0
+            NumOfItemLabel_5.text = String(Int(sender.value))
+            print("here 4")
+            return
+        }
         if (flagCancelPressedStepper_5 == "1"){
             previousStepperValue_5 = Int(sender.value)
             flagCancelPressedStepper_5 = "0"
+            NumOfItemLabel_5.text = String(Int(sender.value) - previousStepperValue_5 + 1)
+            print("here 2")
+            return
         }
-        NumOfItemLabel_5.text = String(Int(sender.value) - previousStepperValue_5 + 1)
+
+//        if (Int(NumOfItemLabel_5.text!) == 0 && Int(sender.value) == 0){
+//            previousStepperValue_5 = 0
+////            NumOfItemLabel_5.text = "0"
+//            print("here 3")
+//            return
+//        }
+        
+        NumOfItemLabel_5.text = String(Int(sender.value) - previousStepperValue_5)
     }
     
 
