@@ -3,6 +3,7 @@
 //  Shopping-List
 //
 //  Created by Ashkan Goharfar on 10/30/2021.
+// Student ID: 301206729
 //
 
 import UIKit
@@ -63,7 +64,7 @@ class ViewController: UIViewController {
     
     @IBAction func CancelButton_Pressed(_ sender: UIButton) {
         
-        ShoppingListNameTextField.text = ""
+        ShoppingListNameTextField.text = "My Shopping List"
         
         flagCancelPressedStepper_1 = "1"
         NumOfItemLabel_1.text = "0"
@@ -88,67 +89,123 @@ class ViewController: UIViewController {
     
     
     @IBAction func StepperNumItem_Pressed_1(_ sender: UIStepper) {
+        if (Int(sender.value) == 0){
+            previousStepperValue_1 = 0
+            NumOfItemLabel_1.text = String(Int(sender.value))
+            return
+        }
         if (flagCancelPressedStepper_1 == "1"){
             previousStepperValue_1 = Int(sender.value)
             flagCancelPressedStepper_1 = "0"
+            if ((Int(sender.value) - previousStepperValue_1) == 0)
+            {
+                NumOfItemLabel_1.text = String(Int(sender.value) - previousStepperValue_1)
+                return
+            }
+            NumOfItemLabel_1.text = String(Int(sender.value) - previousStepperValue_1 + 1)
+            return
         }
-        NumOfItemLabel_1.text = String(Int(sender.value) - previousStepperValue_1 + 1)
+        if ((Int(sender.value) - previousStepperValue_1) < 0){
+            previousStepperValue_1 = Int(sender.value)
+            NumOfItemLabel_1.text = "0"
+        }
+        NumOfItemLabel_1.text = String(Int(sender.value) - previousStepperValue_1)
     }
     
     
     @IBAction func StepperNumItem_Pressed_2(_ sender: UIStepper) {
+        if (Int(sender.value) == 0){
+            previousStepperValue_2 = 0
+            NumOfItemLabel_2.text = String(Int(sender.value))
+            return
+        }
         if (flagCancelPressedStepper_2 == "1"){
             previousStepperValue_2 = Int(sender.value)
             flagCancelPressedStepper_2 = "0"
+            if ((Int(sender.value) - previousStepperValue_2) == 0)
+            {
+                NumOfItemLabel_2.text = String(Int(sender.value) - previousStepperValue_2)
+                return
+            }
+            NumOfItemLabel_2.text = String(Int(sender.value) - previousStepperValue_2 + 2)
+            return
         }
-        NumOfItemLabel_2.text = String(Int(sender.value) - previousStepperValue_2 + 1)    }
+        if ((Int(sender.value) - previousStepperValue_2) < 0){
+            previousStepperValue_2 = Int(sender.value)
+            NumOfItemLabel_2.text = "0"
+        }
+        NumOfItemLabel_2.text = String(Int(sender.value) - previousStepperValue_2)
+    }
     
     @IBAction func StepperNumItem_Pressed_3(_ sender: UIStepper) {
+        if (Int(sender.value) == 0){
+            previousStepperValue_3 = 0
+            NumOfItemLabel_3.text = String(Int(sender.value))
+            return
+        }
         if (flagCancelPressedStepper_3 == "1"){
             previousStepperValue_3 = Int(sender.value)
             flagCancelPressedStepper_3 = "0"
+            if ((Int(sender.value) - previousStepperValue_3) == 0)
+            {
+                NumOfItemLabel_3.text = String(Int(sender.value) - previousStepperValue_3)
+                return
+            }
+            NumOfItemLabel_3.text = String(Int(sender.value) - previousStepperValue_3 + 1)
+            return
         }
-        NumOfItemLabel_3.text = String(Int(sender.value) - previousStepperValue_3 + 1)
+        if ((Int(sender.value) - previousStepperValue_3) < 0){
+            previousStepperValue_3 = Int(sender.value)
+            NumOfItemLabel_3.text = "0"
+        }
+        NumOfItemLabel_3.text = String(Int(sender.value) - previousStepperValue_3)
     }
     
     @IBAction func StepperNumItem_Pressed_4(_ sender: UIStepper) {
+        if (Int(sender.value) == 0){
+            previousStepperValue_4 = 0
+            NumOfItemLabel_4.text = String(Int(sender.value))
+            return
+        }
         if (flagCancelPressedStepper_4 == "1"){
             previousStepperValue_4 = Int(sender.value)
             flagCancelPressedStepper_4 = "0"
+            if ((Int(sender.value) - previousStepperValue_4) == 0)
+            {
+                NumOfItemLabel_4.text = String(Int(sender.value) - previousStepperValue_4)
+                return
+            }
+            NumOfItemLabel_4.text = String(Int(sender.value) - previousStepperValue_4 + 1)
+            return
         }
-        NumOfItemLabel_4.text = String(Int(sender.value) - previousStepperValue_4 + 1)
+        if ((Int(sender.value) - previousStepperValue_4) < 0){
+            previousStepperValue_4 = Int(sender.value)
+            NumOfItemLabel_4.text = "0"
+        }
+        NumOfItemLabel_4.text = String(Int(sender.value) - previousStepperValue_4)
     }
     
     @IBAction func StepperNumItem_Pressed_5(_ sender: UIStepper) {
-        print("Sender val : ", Int(sender.value))
-        if ((NumOfItemLabel_5.text == "0") && (Int(sender.value) != 0) && (previousStepperValue_5 != 0) && (Int(sender.value) < previousStepperValue_5)){
-//            NumOfItemLabel_5.text = "0"
-            NumOfItemLabel_5.text = String(Int(sender.value) - previousStepperValue_5)
-            print("here 1")
-            return
-        }
         if (Int(sender.value) == 0){
-//            NumOfItemLabel_5.text = "0"
             previousStepperValue_5 = 0
             NumOfItemLabel_5.text = String(Int(sender.value))
-            print("here 4")
             return
         }
         if (flagCancelPressedStepper_5 == "1"){
             previousStepperValue_5 = Int(sender.value)
             flagCancelPressedStepper_5 = "0"
+            if ((Int(sender.value) - previousStepperValue_5) == 0)
+            {
+                NumOfItemLabel_5.text = String(Int(sender.value) - previousStepperValue_5)
+                return
+            }
             NumOfItemLabel_5.text = String(Int(sender.value) - previousStepperValue_5 + 1)
-            print("here 2")
             return
         }
-
-//        if (Int(NumOfItemLabel_5.text!) == 0 && Int(sender.value) == 0){
-//            previousStepperValue_5 = 0
-////            NumOfItemLabel_5.text = "0"
-//            print("here 3")
-//            return
-//        }
-        
+        if ((Int(sender.value) - previousStepperValue_5) < 0){
+            previousStepperValue_5 = Int(sender.value)
+            NumOfItemLabel_5.text = "0"
+        }
         NumOfItemLabel_5.text = String(Int(sender.value) - previousStepperValue_5)
     }
     
