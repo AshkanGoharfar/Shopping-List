@@ -3,13 +3,18 @@
 //  Shopping-List
 //
 //  Created by Ashkan Goharfar on 10/30/2021.
-// Student ID: 301206729
+//  Student ID: 301206729
+// Version: 1.0
 //
 
 import UIKit
 
 class ViewController: UIViewController {
 
+    /**
+      * Create variables for handling stepper value in case of pressing cancel button by user
+      * Crearte flags for checking status of pressing cancel button.
+      */
     var previousStepperValue_1 = 0
     var flagCancelPressedStepper_1 = "0"
     
@@ -25,43 +30,53 @@ class ViewController: UIViewController {
     var previousStepperValue_5 = 0
     var flagCancelPressedStepper_5 = "0"
     
-    
+    // weak variable for textfiled of assigning shopping list
     @IBOutlet weak var ShoppingListNameTextField: UITextField!
     
-    
+    // weak variable for textfiled of first item of shopping list
     @IBOutlet weak var SelectedItemTextField_1: UITextField!
     
-    
+    // weak variable for textfiled of second item of shopping list
     @IBOutlet weak var SelectedItemTextField_2: UITextField!
     
-    
+    // weak variable for textfiled of third item of shopping list
     @IBOutlet weak var SelectedItemTextField_3: UITextField!
     
+    // weak variable for textfiled of fourth item of shopping list
     @IBOutlet weak var SelectedItemTextField_4: UITextField!
     
-    
+    // weak variable for textfiled of five item of shopping list
     @IBOutlet weak var SelectedItemTextField_5: UITextField!
     
-    
+    // weak variable for displaying number of selected first item
     @IBOutlet weak var NumOfItemLabel_1: UILabel!
     
-    
+    // weak variable for displaying number of selected second item
     @IBOutlet weak var NumOfItemLabel_2: UILabel!
     
-    
+    // weak variable for displaying number of selected third item
     @IBOutlet weak var NumOfItemLabel_3: UILabel!
     
-    
+    // weak variable for displaying number of selected fourth item
     @IBOutlet weak var NumOfItemLabel_4: UILabel!
     
-    
+    // weak variable for displaying number of selected fifth item
     @IBOutlet weak var NumOfItemLabel_5: UILabel!
     
     
+    /**
+     * Create a Save Button Action Listener to save shopping list.
+     *
+     * @param UIButton as sender
+     */
     @IBAction func SaveButton_Pressed(_ sender: UIButton) {
     }
     
-    
+    /**
+     * Create a Cancel Button Action Listener to cancel orders and also reset stepper value and other text fields.
+     *
+     * @param UIButton as sender
+     */
     @IBAction func CancelButton_Pressed(_ sender: UIButton) {
         
         ShoppingListNameTextField.text = "My Shopping List"
@@ -87,7 +102,11 @@ class ViewController: UIViewController {
         SelectedItemTextField_5.text = ""
     }
     
-    
+    /**
+     * Create a Stepper Button Action Listener to increase or decrease number of orders of first item.
+     *
+     * @param UIButton as sender
+     */
     @IBAction func StepperNumItem_Pressed_1(_ sender: UIStepper) {
         if (Int(sender.value) == 0){
             previousStepperValue_1 = 0
@@ -112,7 +131,12 @@ class ViewController: UIViewController {
         NumOfItemLabel_1.text = String(Int(sender.value) - previousStepperValue_1)
     }
     
-    
+    /**
+     * Create a Stepper Button Action Listener to increase or decrease number of orders of second item.
+     *
+     * @param UIButton as sender
+     */
+
     @IBAction func StepperNumItem_Pressed_2(_ sender: UIStepper) {
         if (Int(sender.value) == 0){
             previousStepperValue_2 = 0
@@ -137,6 +161,12 @@ class ViewController: UIViewController {
         NumOfItemLabel_2.text = String(Int(sender.value) - previousStepperValue_2)
     }
     
+    /**
+     * Create a Stepper Button Action Listener to increase or decrease number of orders of third item.
+     *
+     * @param UIButton as sender
+     */
+
     @IBAction func StepperNumItem_Pressed_3(_ sender: UIStepper) {
         if (Int(sender.value) == 0){
             previousStepperValue_3 = 0
@@ -161,6 +191,11 @@ class ViewController: UIViewController {
         NumOfItemLabel_3.text = String(Int(sender.value) - previousStepperValue_3)
     }
     
+    /**
+     * Create a Stepper Button Action Listener to increase or decrease number of orders of fourth item.
+     *
+     * @param UIButton as sender
+     */
     @IBAction func StepperNumItem_Pressed_4(_ sender: UIStepper) {
         if (Int(sender.value) == 0){
             previousStepperValue_4 = 0
@@ -185,6 +220,11 @@ class ViewController: UIViewController {
         NumOfItemLabel_4.text = String(Int(sender.value) - previousStepperValue_4)
     }
     
+    /**
+     * Create a Stepper Button Action Listener to increase or decrease number of orders of five item.
+     *
+     * @param UIButton as sender
+     */
     @IBAction func StepperNumItem_Pressed_5(_ sender: UIStepper) {
         if (Int(sender.value) == 0){
             previousStepperValue_5 = 0
